@@ -18,7 +18,7 @@ all the files you'd just get a 2.5M directory, for a 98.85% of space savings.
 To leverage LFS:
 
 ```bash
-    GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/linux-kdevops/kdevops-results-archive.git small
+    GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/linux-kdevops/kdevops-results-archive.git
 ```
 
 To get the file you want:
