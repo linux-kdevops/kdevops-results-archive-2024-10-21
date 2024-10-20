@@ -7,11 +7,30 @@ This is a collection of results for tests run with
 on different kernels. Each user has their own dedicated
 namespace.
 
-Just clone this repository onto the directory where the
-kdevops git repository is placed and kdevops will automatically
-make use of it. To be clear, you should both the kdevops and
-kdevops-results-archive directory in the same directory. Do
-not put kdevops-results-archive inside the kdevops directory.
+This git tree leverages git lfs, what this allow is for you to download
+only a smaller version of the repository without the actual tarballs
+of the results, you then can decide when and if you need the tarballs
+by selectively downloading them with "git lfs fetch --include". As it
+stands without LFS if you clone this git tree you'd have to download
+218M, if you use GIT_LFS_SKIP_SMUDGE=1 before the clone to avoid downloading
+all the files you'd just get a 2.5M directory, for a 98.85% of space savings.
+
+To leverage LFS:
+
+```bash
+    GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/linux-kdevops/kdevops-results-archive.git small
+```
+
+To get the file you want:
+
+```
+    git lfs fetch --include "fstests/mcgrof/xfs/libvirt-qemu/20240514-0001/6.9.0-rc6+.xz"
+```
+
+kdevops will automatically make use of the archive if you have it present.
+To be clear, you should have both the kdevops and kdevops-results-archive
+directory in the same parent directory. Do not put kdevops-results-archive
+inside the kdevops directory.
 
 # Seeing tarball contents
 
