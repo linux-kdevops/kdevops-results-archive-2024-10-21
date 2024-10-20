@@ -32,6 +32,16 @@ To be clear, you should have both the kdevops and kdevops-results-archive
 directory in the same parent directory. Do not put kdevops-results-archive
 inside the kdevops directory.
 
+# Submitting results
+
+Please ensure you use `*.xz` tarballs, so, if you're going to push
+results, we have a sanity check to ensure you don't push directories
+with more than 5 files. To ensure this you can use:
+
+```bash
+git config core.hooksPath hooks
+```
+
 # Seeing tarball contents
 
 To see contents you can use something like:
